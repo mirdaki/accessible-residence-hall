@@ -1,0 +1,60 @@
+<html>
+  <head>
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+</head>
+
+
+<script>
+  AFRAME.registerComponent('change-color-on-hover', {
+    schema: {
+      color: {default: 'red'}
+    },
+
+    init: function () {
+      var data = this.data;
+      var el = this.el;  // <a-box>
+      var defaultColor = el.getAttribute('material').color;
+      var sky = document.querySelector('a-sky');
+
+      el.addEventListener('mouseenter', function () {
+        el.setAttribute('color', data.color);
+        sky.setAttribute('src', '#med');
+      });
+
+      el.addEventListener('mouseleave', function () {
+        el.setAttribute('color', defaultColor);
+        sky.setAttribute('src', '#low');
+      });
+    }
+  });
+</script>
+<body>
+  <a-scene>
+    <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue"></a-box>
+
+
+    <a-camera>
+<a-entity cursor="fuse: true; fuseTimeout: 500"
+  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+  material="color: black; shader: flat">
+</a-entity>
+</a-camera>
+    
+
+
+<a-assets>
+    <img id="low"
+      src="https://image.ibb.co/dczpeU/bathroom-low.jpg">
+    <img id="med"
+      src="https://image.ibb.co/j0KKDp/bathroom-high.jpg">
+    <img id="hi"
+      src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg">
+    <img id="hires"
+      src="https://image.ibb.co/e189af/xY-nU76w.jpg">
+</a-assets>
+  <a-sky src="#hires"></a-sky>
+<!-- Change the previous line to raise the camera! -->
+
+  </a-scene>
+</body>
+</html>
