@@ -34,24 +34,25 @@
     <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue"></a-box>
 
 
-    <a-camera>
-<a-entity cursor="fuse: true; fuseTimeout: 5000"
+    <a-entity camera look-controls>
+<a-entity cursor="fuse: true; fuseTimeout: 1000"
+  position="0 0 -1"
   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
   material="color: black; shader: flat">
 </a-entity>
-</a-camera>
+</a-entity>
     
 
 
 <a-assets>
     <img id="low"
-      src="https://image.ibb.co/dczpeU/bathroom-low.jpg">
+      src="https://image.ibb.co/dczpeU/bathroom-low.jpg" crossorigin="anonymous">
     <img id="med"
-      src="https://image.ibb.co/j0KKDp/bathroom-high.jpg">
+      src="https://image.ibb.co/j0KKDp/bathroom-high.jpg" crossorigin="anonymous">
     <img id="hi"
-      src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg">
+      src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg" crossorigin="anonymous">
     <img id="hires"
-      src="https://image.ibb.co/e189af/xY-nU76w.jpg">
+      src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous">
 </a-assets>
   <a-sky src="#hires"></a-sky>
 <!-- Change the previous line to raise the camera! -->
