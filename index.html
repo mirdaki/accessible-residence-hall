@@ -16,10 +16,11 @@
       var defaultColor = el.getAttribute('material').color;
       var sky = document.querySelector('a-sky');
 
-      el.addEventListener('mouseenter', function () {
+	el.addEventListener('click', function () {
         el.setAttribute('color', data.color);
         sky.setAttribute('src', '#med');
       });
+
 
       el.addEventListener('mouseleave', function () {
         el.setAttribute('color', defaultColor);
@@ -34,7 +35,7 @@
 
 
     <a-camera>
-<a-entity cursor="fuse: true; fuseTimeout: 500"
+<a-entity cursor="fuse: true; fuseTimeout: 5000"
   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
   material="color: black; shader: flat">
 </a-entity>
