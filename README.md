@@ -20,7 +20,13 @@ To get a local development server
 npm start
 ```
 
-And open http://localhost:3000/
+And open http://localhost:3000/. 
+
+You can also go to address that is printed out when running the app. It will look like the following line. This lets you test the app on your phone (if they are on the same Wi-Fi network)
+
+```bash
+[0004] info  Server running at http://XX.XX.XX.XX:3000/ (connect)
+```
 
 ## License
 
