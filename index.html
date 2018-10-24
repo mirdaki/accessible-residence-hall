@@ -1,6 +1,7 @@
 <html>
   <head>
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
 </head>
 
 
@@ -32,6 +33,20 @@
 <body>
   <a-scene>
     <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue">
+
+	<a-box color="#FFFFFF" position="2 1 -4" 
+	glow="scale: 1.3; color: #FF00FF;"
+	event-set__enter="_event: mouseenter; _target: #image1; visible: true"
+    event-set__leave="_event: mouseleave; _target: #image1; visible: false">
+
+		<a-image id="image1" visible="false" position="0 0 0.6" 
+		height="2"
+		width="2"
+		align="center" src="#poi1"></a-image>
+	
+	</a-box>
+
+
 </a-box>
 
 
@@ -56,6 +71,8 @@
       src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg" crossorigin="anonymous">
     <img id="hires"
       src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous">
+	<img id="poi1"
+	  src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
 </a-assets>
   <a-sky src="#hires"></a-sky>
 <!-- Change the previous line to raise the camera! -->
