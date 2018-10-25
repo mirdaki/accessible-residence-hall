@@ -6,6 +6,41 @@
 
 
 <script>
+var scenelist = [
+  {//scene1
+    sceneref : "#hires",
+    sceneyrot : 0.0, //< 360,
+    transports: [
+    {//port1
+      xpos : 0.0, //the position of the teleport activation shape in the current scene
+      ypos : 1.0,
+      zpos : -4.0,
+      sceneIndex : 1 //index of this array to switch to
+    }
+    ],
+    tooltips: [
+    {//tip1
+      xpos : 2.0, //The position of the tooltip activation shape in the current scene
+      ypos : 1.0,
+      zpos : -4.0,
+      text : "#image1",
+      persistTime : 3.0 //preferably in seconds
+    }
+    ]
+  },
+  {//scene2
+    sceneref : "#med",
+    sceneyrot : 90.0, //< 360,
+    transports: [{
+      xpos : 0.0, //the position of the teleport activation shape in the current scene
+      ypos : -1.0,
+      zpos : 4.0,
+      sceneIndex : 0 //index of this array to switch to
+    }],
+    tooltips: []
+  }
+];
+
   AFRAME.registerComponent('change-color-on-hover', {
     schema: {
       color: {default: 'red'}
@@ -74,6 +109,7 @@
 	<img id="poi1"
 	  src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
 </a-assets>
+
   <a-sky src="#hires"></a-sky>
 <!-- Change the previous line to raise the camera! -->
 
