@@ -12,17 +12,13 @@ var scenelist = [
     sceneyrot : 0.0, //< 360,
     transports: [
     {//port1
-      xpos : 0.0, //the position of the teleport activation shape in the current scene
-      ypos : 1.0,
-      zpos : -4.0,
+      pos : '0 1 -4',
       sceneIndex : 1 //index of this array to switch to
     }
     ],
     tooltips: [
     {//tip1
-      xpos : 2.0, //The position of the tooltip activation shape in the current scene
-      ypos : 1.0,
-      zpos : -4.0,
+      pos : '2 1 -4',
       text : "#image1",
       persistTime : 3.0 //preferably in seconds
     }
@@ -32,19 +28,18 @@ var scenelist = [
     sceneref : "#med",
     sceneyrot : 90.0, //< 360,
     transports: [{
-      xpos : 0.0, //the position of the teleport activation shape in the current scene
-      ypos : -1.0,
-      zpos : 4.0,
+      pos : '3 1 4',
       sceneIndex : 0 //index of this array to switch to
     }],
     tooltips: []
   }
 ];
+  
 
   AFRAME.registerComponent('change-scene-on-click', {
     schema: {
       color: {default: 'blue'},
-      clickSrc: {default: '#hires'}
+      sceneNum: {default: '#hires'}
     },
 
     init: function () {
@@ -53,10 +48,28 @@ var scenelist = [
       var defaultColor = el.getAttribute('material').color;
       var sky = document.querySelector('a-sky');
 
+      function loadPorts(transports) {
+        var boxes = document.querySelectorAll('a-box');
+        for (var i=0; i< boxes.length; i++){
+          //I think we can reuse the same two/three box port objects and just set their data appropriately.
+          //As long as we have exactly the same number of boxes in every scene, we need no additional logic.
+          //Therefore maybe we set some dummy boxes to be really small/way up in the air.
+          boxes[i].setAttribute('position', transports[i].pos);
+          //This line works^
+          boxes[i].setAttribute('change-scene-on-click', 
+            {'sceneNum' : transports[i].sceneIndex});
+          //^This one doesn't?
+        }
+        return;
+      }
+
 	    el.addEventListener('click', function () {
-        sky.setAttribute('src', data.clickSrc);
-        //Call a function to (un)load new teleport boxes here.
-        //Call a function to (un)load new tooltip boxes here. 
+        var scene = scenelist[data.sceneNum];
+        sky.setAttribute('src', scene.sceneref);
+        //Set sky yaw.
+        loadPorts(scene.transports);
+        //Call a function to (un)load new tooltip boxes here.
+
       });
 
       el.addEventListener('mouseenter', function () {
@@ -71,10 +84,10 @@ var scenelist = [
 </script>
 <body>
   <a-scene>
-    <a-box color="#EF2D5E" position="0 1 -4" change-scene-on-click="clickSrc: #med">
+    <a-box color="#EF2D5E" position="0 1 -4" change-scene-on-click="sceneNum: 1">
     </a-box>
 
-	<a-box color="#FFFFFF" position="2 1 -4" 
+	<a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
 	glow="scale: 1.3; color: #FF00FF;"
 	event-set__enter="_event: mouseenter; _target: #image1; visible: true"
     event-set__leave="_event: mouseleave; _target: #image1; visible: false">
@@ -84,7 +97,7 @@ var scenelist = [
 		width="2"
 		align="center" src="#poi1"></a-image>
 	
-	</a-box>
+	</a-circle>
 
 
     <a-entity camera look-controls>
