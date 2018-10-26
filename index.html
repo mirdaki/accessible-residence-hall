@@ -59,6 +59,7 @@ var scenelist = [
           boxes[i].setAttribute('change-scene-on-click', 
             {'sceneNum' : transports[i].sceneIndex});
           //^This one doesn't?
+          //The component updates according to the debugger, but the attribute doesn't. Strangely, the same is true for position but it seems to actually function normally for that component.
         }
         return;
       }
