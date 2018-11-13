@@ -14,7 +14,11 @@
             {//port1
               pos : '0 -4 -4',
               sceneIndex : 1 //index of this array to switch to
-            }
+            },
+            {//NO port2
+              pos : "999999 999999 -9999999",
+              sceneIndex : 1 //index of this array to switch to
+            },
           ],
           tooltips: [
             {//tip1
@@ -87,10 +91,11 @@
   </script>
   <a-scene>
 
-    <!-- Warp box -->
+    <!-- Warp boxes -->
     <a-box color="#EF2D5E" position="0 -3 -15" change-scene-on-click="sceneNum: 4">
     </a-box>
-
+    <a-box color="#EF2D5E" position="999999 999999 -9999999" change-scene-on-click="sceneNum: 4">
+    </a-box>
     <!-- Point of interest -->
     <a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
       glow="scale: 1.3; color: #FF00FF;"
