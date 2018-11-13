@@ -2,6 +2,7 @@
 <head>
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+  <script src="components/change-scene-on-click.js"></script>
 </head>
 <body>
   <script>
@@ -83,52 +84,6 @@
             tooltips: []
           }
       ];
-        
-      
-    AFRAME.registerComponent('change-scene-on-click', {
-      schema: {
-        color: {default: 'green'},
-        sceneNum: {default: 0}
-      },
-  
-      update: function () {
-        var data = this.data;
-        var el = this.el;  // <a-box>
-        var defaultColor = el.getAttribute('material').color;
-        var sky = document.querySelector('a-sky');
-  
-        function loadPorts(transports) {
-          var boxes = document.querySelectorAll('a-box');
-          for (var i=0; i< boxes.length; i++){
-            //I think we can reuse the same two/three box port objects and just set their data appropriately.
-            //As long as we have exactly the same number of boxes in every scene, we need no additional logic.
-            boxes[i].setAttribute('position', transports[i].pos);
-            boxes[i].setAttribute('change-scene-on-click', 
-              "sceneNum: " + transports[i].sceneIndex);
-          }
-          return;
-        }
-  
-        el.addEventListener('click', function () {
-          var scene = scenelist[data.sceneNum];
-          sky.setAttribute('src', scene.sceneref);
-          sky.setAttribute('phi-start', scene.sceneyrot);
-          el.setAttribute('color', defaultColor);
-          //Set sky yaw.
-          loadPorts(scene.transports);
-          //Call a function to (un)load new tooltip boxes here.
-  
-        });
-  
-        el.addEventListener('mouseenter', function () {
-          el.setAttribute('color', data.color);
-        });
-  
-        el.addEventListener('mouseleave', function () {
-          el.setAttribute('color', defaultColor);
-        });
-      }
-    });
   </script>
   <a-scene>
 
@@ -176,18 +131,12 @@
         src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous">
       <img id="poi1"
         src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
-      <img id="bedroom-general"
-        src="DSCN0055.jpg">
-      <img id="bedroom-bed"
-        src="DSCN0056.jpg" crossorigin="anonymous">
-      <img id="hallway"
-        src="DSCN0058.jpg" crossorigin="anonymous">
-      <img id="entrance"
-        src="entrance.jpg" crossorigin="anonymous">
-      <img id="ground-floor"
-        src="elev-out.jpg" crossorigin="anonymous">
-      <img id="elevator"
-        src="elev-in.jpg" crossorigin="anonymous">
+      <img id="bedroom-general" src="images\front-dorm-room.jpg">
+      <img id="bedroom-bed" src="images\back-dorm-room.jpg">
+      <img id="hallway" src="images\hallway.jpg">
+      <img id="entrance" src="images\entrance.jpg">
+      <img id="ground-floor" src="images\bottom-floor-elevator.jpg">
+      <img id="elevator" src="images\elevator-in.jpg">
     </a-assets>
 
   </a-scene>
