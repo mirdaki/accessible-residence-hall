@@ -25,7 +25,7 @@
         },
         {//scene2 - bedroom general
           sceneref : "#bedroom-general",
-          sceneyrot : 90.0, //< 360,
+          sceneyrot : 0.0, //< 360,
           transports: [
             {
               pos : '-7 -2 0',
@@ -40,7 +40,7 @@
         },
           {//scene3 - bed
             sceneref : "#bedroom-bed",
-            sceneyrot : 90.0, //< 360,
+            sceneyrot : 0.0, //< 360,
             transports: [
               {
                 pos : '7 -2 0',
@@ -51,7 +51,7 @@
           },
           {//scene4
             sceneref : "#hallway",
-            sceneyrot : 90.0, //< 360,
+            sceneyrot : 0.0, //< 360,
             transports: [
               {
                 pos : '-7 -2 0',
@@ -62,7 +62,7 @@
           },
           {//scene5 - ground floor
             sceneref : "#ground-floor",
-            sceneyrot : 90.0, //< 360,
+            sceneyrot : 0.0, //< 360,
             transports: [
               {
                 pos : '-7 -2 0',
@@ -73,7 +73,7 @@
           },
           {//scene6 - elevator
             sceneref : "#elevator",
-            sceneyrot : 90.0, //< 360,
+            sceneyrot : 0.0, //< 360,
             transports: [
               {
                 pos : '10 -2 0',
@@ -112,6 +112,7 @@
         el.addEventListener('click', function () {
           var scene = scenelist[data.sceneNum];
           sky.setAttribute('src', scene.sceneref);
+          sky.setAttribute('phi-start', scene.sceneyrot);
           el.setAttribute('color', defaultColor);
           //Set sky yaw.
           loadPorts(scene.transports);
