@@ -4,69 +4,6 @@
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
 </head>
 <body>
-  <a-scene>
-
-    <!-- Warp box -->
-    <a-box color="#EF2D5E" position="0 -3 -15" change-scene-on-click="sceneNum: 4">
-    </a-box>
-
-    <!-- Point of interest -->
-    <a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
-      glow="scale: 1.3; color: #FF00FF;"
-      event-set__enter="_event: mouseenter; _target: #image1; visible: true"
-      event-set__leave="_event: mouseleave; _target: #image1; visible: false">
-
-      <a-image id="image1" visible="false" position="0 0 0.6" 
-        height="2" width="2" align="center" src="#poi1">
-      </a-image>
-    </a-circle>
-
-    <!-- Camera -->
-    <a-entity camera look-controls>
-      <a-entity cursor="fuse: true; fuseTimeout: 1000"
-        position="0 0 -1"
-        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-        material="color: black; shader: flat">
-
-        <!-- Cursor -->
-        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1000"
-          fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
-        </a-animation>
-
-      </a-entity>
-    </a-entity>
-    
-    <!-- First scene -->
-    <a-sky src="#entrance"></a-sky>
-
-    <!-- List of images and video -->
-    <a-assets>
-      <img id="low"
-        src="https://image.ibb.co/dczpeU/bathroom-low.jpg" crossorigin="anonymous">
-      <img id="med"
-        src="https://image.ibb.co/j0KKDp/bathroom-high.jpg" crossorigin="anonymous">
-      <img id="hi"
-        src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg" crossorigin="anonymous">
-      <img id="hires" 
-        src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous">
-      <img id="poi1"
-        src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
-      <img id="bedroom-general"
-        src="https://image.ibb.co/mJTPYV/DSCN0055.jpg" crossorigin="anonymous">
-      <img id="bedroom-bed"
-        src="https://image.ibb.co/maennq/DSCN0056.jpg" crossorigin="anonymous">
-      <img id="hallway"
-        src="https://image.ibb.co/jkvSnq/DSCN0058.jpg" crossorigin="anonymous">
-      <img id="entrance"
-        src=" https://image.ibb.co/ifev7q/entrance.jpg" crossorigin="anonymous">
-      <img id="ground-floor"
-        src="https://image.ibb.co/fedoSq/ground-floor.jpg" crossorigin="anonymous">
-      <img id="elevator"
-        src="https://image.ibb.co/jsZv7q/elevator.jpg" crossorigin="anonymous">
-    </a-assets>
-
-  </a-scene>
-
   <script>
     var scenelist = [
         {//scene1 - bathroom
@@ -192,5 +129,67 @@
       }
     });
   </script>
+  <a-scene>
+
+    <!-- Warp box -->
+    <a-box color="#EF2D5E" position="0 -3 -15" change-scene-on-click="sceneNum: 4">
+    </a-box>
+
+    <!-- Point of interest -->
+    <a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
+      glow="scale: 1.3; color: #FF00FF;"
+      event-set__enter="_event: mouseenter; _target: #image1; visible: true"
+      event-set__leave="_event: mouseleave; _target: #image1; visible: false">
+
+      <a-image id="image1" visible="false" position="0 0 0.6" 
+        height="2" width="2" align="center" src="#poi1">
+      </a-image>
+    </a-circle>
+
+    <!-- Camera -->
+    <a-entity camera look-controls>
+      <a-entity cursor="fuse: true; fuseTimeout: 1000"
+        position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+        material="color: black; shader: flat">
+
+        <!-- Cursor -->
+        <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1000"
+          fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
+        </a-animation>
+
+      </a-entity>
+    </a-entity>
+    
+    <!-- First scene -->
+    <a-sky src="#entrance"></a-sky>
+
+    <!-- List of images and video -->
+    <a-assets>
+      <img id="low"
+        src="https://image.ibb.co/dczpeU/bathroom-low.jpg" crossorigin="anonymous">
+      <img id="med"
+        src="https://image.ibb.co/j0KKDp/bathroom-high.jpg" crossorigin="anonymous">
+      <img id="hi"
+        src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg" crossorigin="anonymous">
+      <img id="hires" 
+        src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous">
+      <img id="poi1"
+        src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
+      <img id="bedroom-general"
+        src="https://image.ibb.co/mJTPYV/DSCN0055.jpg" crossorigin="anonymous">
+      <img id="bedroom-bed"
+        src="https://image.ibb.co/maennq/DSCN0056.jpg" crossorigin="anonymous">
+      <img id="hallway"
+        src="https://image.ibb.co/jkvSnq/DSCN0058.jpg" crossorigin="anonymous">
+      <img id="entrance"
+        src=" https://image.ibb.co/ifev7q/entrance.jpg" crossorigin="anonymous">
+      <img id="ground-floor"
+        src="https://image.ibb.co/fedoSq/ground-floor.jpg" crossorigin="anonymous">
+      <img id="elevator"
+        src="https://image.ibb.co/jsZv7q/elevator.jpg" crossorigin="anonymous">
+    </a-assets>
+
+  </a-scene>
 </body>
 </html>
