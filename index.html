@@ -7,7 +7,7 @@
 
 <script>
 var scenelist = [
-  {//scene1
+  {//scene1 - bathroom
     sceneref : "#hires",
     sceneyrot : 0.0, //< 360,
     transports: [
@@ -24,7 +24,7 @@ var scenelist = [
     }
     ]
   },
-  {//scene2
+  {//scene2 - bedroom general
     sceneref : "#bedroom-general",
     sceneyrot : 90.0, //< 360,
     transports: [
@@ -39,7 +39,7 @@ var scenelist = [
     ],
     tooltips: []
   },
-    {//scene3
+    {//scene3 - bed
         sceneref : "#bedroom-bed",
         sceneyrot : 90.0, //< 360,
         transports: [
@@ -57,6 +57,28 @@ var scenelist = [
             {
                 pos : '-7 -2 0',
                 sceneIndex : 1 //index of this array to switch to
+            }
+        ],
+        tooltips: []
+    },
+    {//scene5 - ground floor
+        sceneref : "#ground-floor",
+        sceneyrot : 90.0, //< 360,
+        transports: [
+            {
+                pos : '-7 -2 0',
+                sceneIndex : 5 //index of this array to switch to elevator
+            }
+        ],
+        tooltips: []
+    },
+    {//scene6 - elevator
+        sceneref : "#elevator",
+        sceneyrot : 90.0, //< 360,
+        transports: [
+            {
+                pos : '10 -2 0',
+                sceneIndex : 3 //index of this array to switch to hallway
             }
         ],
         tooltips: []
@@ -110,7 +132,7 @@ var scenelist = [
 </script>
 <body>
   <a-scene>
-    <a-box color="#EF2D5E" position="-7 1 0" change-scene-on-click="sceneNum: 1">
+    <a-box color="#EF2D5E" position="0 -3 -15" change-scene-on-click="sceneNum: 4">
     </a-box>
 
 	<a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
@@ -155,10 +177,17 @@ var scenelist = [
          src="https://image.ibb.co/maennq/DSCN0056.jpg" crossorigin="anonymous">
     <img id="hallway"
          src="https://image.ibb.co/jkvSnq/DSCN0058.jpg" crossorigin="anonymous">
+    <img id="entrance"
+         src=" https://image.ibb.co/ifev7q/entrance.jpg" crossorigin="anonymous">
+    <img id="ground-floor"
+         src="https://image.ibb.co/fedoSq/ground-floor.jpg" crossorigin="anonymous">
+    <img id="elevator"
+         src="https://image.ibb.co/jsZv7q/elevator.jpg" crossorigin="anonymous">
+
 
 </a-assets>
 
-  <a-sky src="#hallway"></a-sky>
+  <a-sky src="#entrance"></a-sky>
 <!-- Change the previous line to raise the camera! -->
 
   </a-scene>
