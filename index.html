@@ -7,18 +7,18 @@
 <body>
   <script>
     var scenelist = [
-        {//scene1 - bathroom
+        {//scene0 - bathroom
           sceneref : "#bathroom",
           sceneyrot : 0.0, //< 360,
           transports: [
-            {//port1
+            {//bed
               pos : '-8 -2 5',
-              sceneIndex : 1 //index of this array to switch to
+              sceneIndex : 2 //index of this array to switch to
             },
             {//NO port2
               pos : "999999 999999 -9999999",
               sceneIndex : 1 //index of this array to switch to
-            },
+            }
           ],
           tooltips: [
             {//tip1
@@ -28,73 +28,119 @@
             }
           ]
         },
-        {//scene2 - bedroom general
+        {//scene1 - bedroom general
           sceneref : "#bedroom-general",
           sceneyrot : 0.0, //< 360,
           transports: [
-            {
+            { //bed
               pos : '-7 -2 0',
               sceneIndex : 2 //index of this array to switch to
             },
-            {
-              pos : '-7 -1 -7',
-              sceneIndex : 0 //index of this array to switch to //figure out how to add two boxes in one scene
+            { //back to hallway
+              pos : '7 -2 0',
+              sceneIndex : 3 //index of this array to switch to
             }
           ],
           tooltips: []
         },
-          {//scene3 - bed
+          {//scene2 - bed
             sceneref : "#bedroom-bed",
             sceneyrot : 0.0, //< 360,
             transports: [
-              {
-                pos : '7 -2 0',
-                sceneIndex : 1 //index of this array to switch to
-              }
+              { //bathroom
+                pos : '10 -1 -4',
+                sceneIndex : 0 //index of this array to switch to
+              },
+                {// bedroom general
+                    pos : "20 0 0",
+                    sceneIndex : 1 //index of this array to switch to
+                }
             ],
             tooltips: []
           },
-          {//scene4
+          {//scene3
             sceneref : "#hallway",
             sceneyrot : 0.0, //< 360,
             transports: [
-              {
-                pos : '-7 -2 0',
+              {//bedroom general
+                pos : '-9 -1 2',
                 sceneIndex : 1 //index of this array to switch to
-              }
+              },
+              {//back downstairs
+                pos : "8 -1 4",
+                sceneIndex : 4 //index of this array to switch to
+              },
             ],
             tooltips: []
           },
-          {//scene5 - ground floor
+          {//scene4 - ground floor
             sceneref : "#ground-floor",
             sceneyrot : 0.0, //< 360,
             transports: [
-              {
-                pos : '-7 -2 0',
+              { //back to entrance
+                pos : '-4 -3 10',
+                sceneIndex : 7 //index of this array to switch to elevator
+              },
+              { //inside elevator
+                pos : '-10 -2 3',
                 sceneIndex : 5 //index of this array to switch to elevator
               }
             ],
             tooltips: []
           },
-          {//scene6 - elevator
+          {//scene5 - elevator
             sceneref : "#elevator",
             sceneyrot : 0.0, //< 360,
             transports: [
               {
                 pos : '10 -2 0',
                 sceneIndex : 3 //index of this array to switch to hallway
+              },
+              {//NO port2
+                pos : "999999 999999 -9999999",
+                sceneIndex : 1 //index of this array to switch to
               }
             ],
             tooltips: []
-          }
+          },
+        {//scene6 - bottom floor common area
+            sceneref : "#common-area",
+            sceneyrot : 0.0, //< 360,
+            transports: [
+                { //back to entrance
+                    pos : '-18 -2 -3',
+                    sceneIndex : 7 //index of this array to switch to hallway
+                },
+                { //NO PORT2
+                    pos : '999999 999999 -9999999',
+                    sceneIndex : 3 //index of this array to switch to hallway
+                }
+            ],
+            tooltips: []
+        },
+        {//scene7 - entrance
+            sceneref : "#entrance",
+            sceneyrot : 0.0, //< 360,
+            transports: [
+                {//bottom floor elevator
+                    pos : "-3 -1 -13",
+                    sceneIndex : 4 //index of this array to switch to
+                },
+                {//common-area
+                    pos : "-15 -3 3",
+                    sceneIndex : 6 //index of this array to switch to
+                }
+            ],
+            tooltips: []
+        }
       ];
   </script>
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-box color="#EF2D5E" position="0 -3 -15" change-scene-on-click="sceneNum: 4">
+    <a-box color="#EF2D5E" position="-15 -1 4" change-scene-on-click="sceneNum: 7">
     </a-box>
-    <a-box color="#EF2D5E" position="999999 999999 -9999999" change-scene-on-click="sceneNum: 4">
+    <a-box color="#EF2D5E" position="999999 999999 -9999999" change-scene-on-click="sceneNum: 7">
     </a-box>
     <!-- Point of interest -->
     <a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
@@ -123,7 +169,7 @@
     </a-entity>
     
     <!-- First scene -->
-    <a-sky src="#entrance"></a-sky>
+    <a-sky src="#outside-entrance"></a-sky>
     <!-- List of images and video -->
     <a-assets>
       <img id="low"
@@ -139,10 +185,12 @@
       <img id="bedroom-general" src="images\front-dorm-room.jpg">
       <img id="bedroom-bed" src="images\back-dorm-room.jpg">
       <img id="hallway" src="images\hallway.jpg">
-      <img id="entrance" src="images\entrance.jpg">
-      <img id="ground-floor" src="images\bottom-floor-elevator.jpg">
+      <img id="entrance" src="images\entrance.JPG">
+      <img id="ground-floor" src="images\bottom-floor-elevator.JPG">
       <img id="elevator" src="images\elevator-in.jpg">
       <img id="bathroom" src="images\bathroom.jpg">
+      <img id="common-area" src="images\common-area2.JPG">
+      <img id="outside-entrance" src="images\outside-entrance.JPG">
     </a-assets>
 
   </a-scene>
