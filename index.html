@@ -144,13 +144,14 @@
     <a-box color="#EF2D5E" position="999999 999999 -9999999" change-scene-on-click="sceneNum: 7">
     </a-box>
     <!-- Point of interest -->
-    <a-circle color="#FFFFFF" position="2 1 -4" radius=".5"
-      img-on-click="target: #image1">
+    <a-entity color="#FFFFFF" position="2 1 -4"
+      img-on-click="target: #image1"
+      geometry="primitive: sphere; radius: .2">
 
       <a-image id="image1" visible="false" position="0 0 0.6" 
         height="2" width="2" align="center" src="#poi1">
       </a-image>
-    </a-circle>
+    </a-entity>
 
     <!-- Camera -->
     <a-entity camera look-controls>
