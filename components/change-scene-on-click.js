@@ -33,7 +33,7 @@ AFRAME.registerComponent('change-scene-on-click', {
                     "sceneNum: " + tooltips[i].sceneIndex);
                 pois[i].setAttribute('position', scene.tooltips[i].pos);
                 pois[i].setAttribute('material', {
-                    src: scene.tooltips[0].videoAsset
+                    src: tooltips[i].videoAsset
                 });
             
             }
