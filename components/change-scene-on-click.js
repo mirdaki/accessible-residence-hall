@@ -22,22 +22,21 @@ AFRAME.registerComponent('change-scene-on-click', {
             return;
         }
 
-        function setPois(tooltips){
-            console.log('setPois');
-            var poi1_trigger = document.querySelector('#poi1');
-            var poi2_trigger = document.querySelector('#poi2');
-            var poi1_src = document.querySelector('#image1');
-            var poi1_src = document.querySelector('#image2');
+        function loadPois(tooltips){
+            var spheres = document.querySelectorAll('a-sphere');
             var scene = scenelist[data.sceneNum];
-
-            poi1_trigger.setAttribute('position', scene.tooltips[0].pos);
-            poi1_src.setAttribute('material', {
-                src: scene.tooltips[0].videoAsset
-            });
-            poi2_trigger.setAttribute('position', scene.tooltips[1].pos);
-            poi2_src.setAttribute('material', {
-                src: scene.tooltips[1].videoAsset
-            });
+            var pois = document.querySelectorAll('vidpanel');
+            console.log(pois);
+            for (var i=0; i< spheres.length; i++){
+                spheres[i].setAttribute('position', tooltips[i].pos);
+                spheres[i].setAttribute('change-scene-on-click', 
+                    "sceneNum: " + tooltips[i].sceneIndex);
+                pois[i].setAttribute('position', scene.tooltips[i].pos);
+                pois[i].setAttribute('material', {
+                    src: scene.tooltips[0].videoAsset
+                });
+            
+            }
             return;
         }
 
@@ -56,9 +55,8 @@ AFRAME.registerComponent('change-scene-on-click', {
             sky.setAttribute('phi-start', scene.sceneyrot);
             el.setAttribute('color', defaultColor);
             //Set sky yaw.
+            loadPois(scene.tooltips);
             loadPorts(scene.transports);
-            //Call a function to (un)load new tooltip boxes here.
-            setPois(scene.tooltips);
             startNarration(scene.narration);
         });
 
