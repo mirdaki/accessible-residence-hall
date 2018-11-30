@@ -223,10 +223,10 @@
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-box color="#EF2D5E" position="-15 -1 4" change-scene-on-click="sceneNum: 7">
-    </a-box>
-    <a-box color="#EF2D5E" position="999999 999999 -9999999" change-scene-on-click="sceneNum: 7">
-    </a-box>
+    <a-triangle color="#EF2D5E" position="-15 -1 4" vertex-a="0 1 0" vertex-b="-1 -1 0" vertex-c="1 -1 0" rotation="0 90 0" change-scene-on-click="sceneNum: 7">
+    </a-triangle>
+    <a-triangle color="#EF2D5E" position="999999 999999 -9999999" vertex-a="0 1 0" vertex-b="-1 -1 0" vertex-c="1 -1 0" rotation="0 90 0" change-scene-on-click="sceneNum: 7">
+    </a-triangle>
 
     <!-- Narration --> 
     <a-entity id="sceneNarration" sound="src:#bathroomNarration; autoplay: true;">
