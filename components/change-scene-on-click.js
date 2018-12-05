@@ -25,7 +25,8 @@ AFRAME.registerComponent('change-scene-on-click', {
         function loadPois(tooltips){
             var spheres = document.querySelectorAll('a-sphere');
             var scene = scenelist[data.sceneNum];
-            var pois = document.querySelectorAll('vidpanel');
+            var pois = document.querySelectorAll('.vidpanel');
+            //this is printing out an empty list
             console.log(pois);
             for (var i=0; i< spheres.length; i++){
                 spheres[i].setAttribute('position', tooltips[i].pos);
