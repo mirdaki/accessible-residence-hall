@@ -223,10 +223,15 @@
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-triangle color="#EF2D5E" position="-15 -1 4" vertex-a="0 1 0" vertex-b="-1 -1 0" vertex-c="1 -1 0" rotation="0 90 0" change-scene-on-click="sceneNum: 7">
+    <a-entity color="#EF2D5E" position="-15 -1 4" rotation="0 90 0" change-scene-on-click="sceneNum: 7" collada-model="#arrow">
+    </a-entity>
+    <a-entity color="#EF2D5E" position="999999 999999 -9999999" rotation="0 90 0" change-scene-on-click="sceneNum: 7" collada-model="#arrow">
+    </a-entity>
+    <!--<a-triangle color="#EF2D5E" position="-15 -1 4" vertex-a="0 1 0" vertex-b="-1 -1 0" vertex-c="1 -1 0" rotation="0 90 0" change-scene-on-click="sceneNum: 7">
     </a-triangle>
     <a-triangle color="#EF2D5E" position="999999 999999 -9999999" vertex-a="0 1 0" vertex-b="-1 -1 0" vertex-c="1 -1 0" rotation="0 90 0" change-scene-on-click="sceneNum: 7">
     </a-triangle>
+    -->
 
     <!-- Narration --> 
     <a-entity id="sceneNarration" sound="src:#bathroomNarration; autoplay: true;">
@@ -282,6 +287,7 @@
         src="https://image.ibb.co/gXsNYp/bathroom-highest.jpg" crossorigin="anonymous">
       <img id="hires" 
         src="https://image.ibb.co/e189af/xY-nU76w.jpg" crossorigin="anonymous"> -->
+      <a-asset-item id="arrow" src="/models/Arrow.dae"></a-asset-item>
       <img id="poi"
         src="https://image.ibb.co/ezKJFq/stefan-chair-black-0122106-PE278491-S4-1.jpg" crossorigin="anonymous">
       <img id="outside-entrance" src="images\outside-entrance.jpg">
