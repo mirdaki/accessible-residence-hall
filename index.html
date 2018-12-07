@@ -225,7 +225,7 @@
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-entity class="model" material="color: red" position="-8 -1 3.3" rotation="225 90 90" change-scene-on-click="sceneNum: 7" gltf-model="#arrow">
+    <a-entity class="model" material="color: red" position="-3.3 -1 -12" rotation="225 90 90" change-scene-on-click="sceneNum: 7" gltf-model="#arrow">
     </a-entity>
     <a-entity class="model" material="color: red" position="999999 999999 -9999999" rotation="225 90 90"change-scene-on-click="sceneNum: 7" gltf-model="#arrow">
     </a-entity>
@@ -277,7 +277,7 @@
     </a-entity>
     
     <!-- First scene -->
-    <a-sky src="#outside-entrance"></a-sky>
+    <a-sky src="#outside-entrance" phi-start=90></a-sky>
     <!-- List of images and video -->
     <a-assets>
       <a-asset-item id="arrow" src="/models/arrow.gltf"></a-asset-item>
