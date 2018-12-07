@@ -11,7 +11,7 @@ AFRAME.registerComponent('change-scene-on-click', {
         var sky = document.querySelector('a-sky');
 
         function loadPorts(transports) {
-            var boxes = document.querySelectorAll('a-cone');
+            var boxes = document.querySelectorAll('.model');
             for (var i=0; i< boxes.length; i++){
                 //I think we can reuse the same two/three box port objects and just set their data appropriately.
                 //As long as we have exactly the same number of boxes in every scene, we need no additional logic.
