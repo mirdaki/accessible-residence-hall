@@ -23,14 +23,14 @@ AFRAME.registerComponent('change-scene-on-click', {
         }
 
         function loadPois(tooltips){
-            var spheres = document.querySelectorAll('a-sphere');
+            var circles = document.querySelectorAll('a-circle');
             var scene = scenelist[data.sceneNum];
             var pois = document.querySelectorAll('.vidpanel');
             //this is printing out an empty list
             console.log(pois);
-            for (var i=0; i< spheres.length; i++){
-                //sphere positions
-                spheres[i].setAttribute('position', tooltips[i].pos);
+            for (var i=0; i< circles.length; i++){
+                //circle positions
+                circles[i].setAttribute('position', tooltips[i].pos);
                 //vid pannel positions    
                 pois[i].setAttribute('position', scene.tooltips[i].pos);
                 pois[i].setAttribute('material', {

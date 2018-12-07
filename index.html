@@ -5,6 +5,8 @@
   <script src="components/change-scene-on-click.js"></script>
   <script src="components/img-on-click.js"></script>
   <script src="components/play-point-of-interest.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script> 
+
   </head>
 <body>
     <script>
@@ -233,27 +235,31 @@
     </a-entity>
 
     <!-- Point of interest 1 -->
-    <a-sphere id="poi1" color="#FFFFFF" position="2 1 -4"
+    <a-circle id="poi1" src="images/Information_icon.svg.png" position="2 1 -4"
       img-on-click="target: #image1"
-      geometry="primitive: sphere; radius: .2">
+      geometry="primitive: circle; radius: .2"
+      look-at="[camera]">
 
        <!-- 2 1 -4-->
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" geometry="primitive:plane" id="image1" visible="false" position="-2 -1 3"
-         height="3" width="6" material="shader:flat;src: #lift;" >
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" geometry="primitive:plane; width:3; height:2" id="image1" visible="false" position="0 0 3"
+         height="3" width="6" material="shader:flat;src: #lift;" 
+         look-at="[camera]">
       </a-entity>
 
-    </a-sphere>
+    </a-circle>
 
     <!-- Point of interest 2 -->
-    <a-sphere id="poi2" color="#FFFFFF" position="-2 2 -2"
+    <a-circle id="poi2" src="images/Information_icon.svg.png" position="-2 2 -4"
       img-on-click="target: #image2"
-      geometry="primitive: sphere; radius: .2">
+      geometry="primitive: circle; radius: .2"
+      look-at="[camera]">
 
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" geometry="primitive:plane" id="image2" visible="false" position="-2 -1 3" 
-         height="3" width="6" material="shader:flat; src: #lift;" >
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" geometry="primitive:plane; width:3; height:2" id="image2" visible="false" position="0 0 3" 
+         height="3" width="6" material="shader:flat; src: #lift;" 
+         look-at="[camera]" >
       </a-entity>
 
-    </a-sphere>
+    </a-circle>
     
     <!-- Camera -->
     <a-entity camera look-controls>
