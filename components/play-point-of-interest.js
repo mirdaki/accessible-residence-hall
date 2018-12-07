@@ -10,18 +10,20 @@ AFRAME.registerComponent('play-point-of-interest',{
                 //get the narration and other attributes from here
 
         var narration = document.querySelector('[sound]');
-        //el.setAttribute('material',{
-        //    src: '#lift'
-        //});
+
         el.addEventListener('click', function(){
             var video = document.querySelector(data.poi);
+            console.log(video);
+            console.log('playing video');
             narration.components.sound.pauseSound();
             //playing video
             video.play();
-            video.addEventListener('mouseleave', function(){
+
+            el.addEventListener('mouseleave', function(){
                 var video = document.querySelector(data.poi);
                 video.pause();
                 //resume scene narration
+                console.log('stopping video');
                 narration.components.sound.playSound();
             });
         });

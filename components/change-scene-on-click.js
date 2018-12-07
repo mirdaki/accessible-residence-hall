@@ -29,9 +29,9 @@ AFRAME.registerComponent('change-scene-on-click', {
             //this is printing out an empty list
             console.log(pois);
             for (var i=0; i< spheres.length; i++){
+                //sphere positions
                 spheres[i].setAttribute('position', tooltips[i].pos);
-                spheres[i].setAttribute('change-scene-on-click', 
-                    "sceneNum: " + tooltips[i].sceneIndex);
+                //vid pannel positions    
                 pois[i].setAttribute('position', scene.tooltips[i].pos);
                 pois[i].setAttribute('material', {
                     src: tooltips[i].videoAsset
