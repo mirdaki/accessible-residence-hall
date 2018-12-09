@@ -51,7 +51,9 @@ AFRAME.registerComponent('change-scene-on-click', {
             return;
         }
 
-        el.addEventListener('click', function () {
+        function clickFunction(){
+            //el.removeAttribute('click');
+            //el.setAttribute('change-scene-on-click', data);
             el.setAttribute('color', defaultColor);
             var scene = scenelist[data.sceneNum];
             sky.setAttribute('src', scene.sceneref);
@@ -61,7 +63,11 @@ AFRAME.registerComponent('change-scene-on-click', {
             loadPois(scene.tooltips);
             loadPorts(scene.transports);
             startNarration(scene.narration);
-        });
+            el.removeEventListener('click', clickFunction);
+            return;
+        }
+
+        el.addEventListener('click', clickFunction);
 
         el.addEventListener('mouseenter', function () {
             el.setAttribute('color', data.color);
