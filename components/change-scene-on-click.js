@@ -9,9 +9,9 @@ AFRAME.registerComponent('change-scene-on-click', {
         var el = this.el;  // <a-box>
         var defaultColor = el.getAttribute('material').color;
         var sky = document.querySelector('a-sky');
-
+        
         function loadPorts(transports) {
-            var boxes = document.querySelectorAll('a-cone');
+            var boxes = document.querySelectorAll('.model');
             for (var i=0; i< boxes.length; i++){
                 //I think we can reuse the same two/three box port objects and just set their data appropriately.
                 //As long as we have exactly the same number of boxes in every scene, we need no additional logic.
@@ -21,7 +21,7 @@ AFRAME.registerComponent('change-scene-on-click', {
             }
             return;
         }
-
+        
         function loadPois(tooltips){
             var circles = document.querySelectorAll('a-circle');
             var scene = scenelist[data.sceneNum];
@@ -31,8 +31,9 @@ AFRAME.registerComponent('change-scene-on-click', {
             for (var i=0; i< circles.length; i++){
                 //circle positions
                 circles[i].setAttribute('position', tooltips[i].pos);
+                circles[i].setAttribute(('scale'), tooltips[i].scale);
                 //vid pannel positions    
-                pois[i].setAttribute('position', scene.tooltips[i].pos);
+                pois[i].setAttribute('position', scene.tooltips[i].vidPos);
                 pois[i].setAttribute('material', {
                     src: tooltips[i].videoAsset
                 });
@@ -46,6 +47,7 @@ AFRAME.registerComponent('change-scene-on-click', {
             narr.setAttribute('sound', {
                 src: narration
             });
+            console.log(scenelist[data.sceneNum]);
             return;
         }
 
