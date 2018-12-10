@@ -37,17 +37,20 @@ AFRAME.registerComponent('change-scene-on-click', {
                 pois[i].setAttribute('material', {
                     src: tooltips[i].videoAsset
                 });
+                pois[i].setAttribute('sound', {
+                    src: tooltips[i].poiNarration
+                });
             }
             return;
         }
 
         function startNarration(narration){
-            console.log(narration);
-            var narr = document.querySelector('#sceneNarration');
-            narr.setAttribute('sound', {
+            var narrScene = document.querySelector('#sceneNarration');
+            narrScene.setAttribute('sound', {
                 src: narration
             });
-            console.log(scenelist[data.sceneNum]);
+            narrScene.components.sound.playSound();
+            console.log("THIS IS NARRATION " + narration);
             return;
         }
 

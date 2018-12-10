@@ -29,13 +29,15 @@
                   pos : '2 -1 -5',  //sink
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#lift", //video asset 
-                  vidPos: '0 0 0.5'
+                  vidPos: '0 0 0.5',
+                  poiNarration: '#sinkNarration'
                 },
                 {
                   pos : '4 1 -4',
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#tablet", //video asset 
-                  vidPos: '0 0 3'
+                  vidPos: '0 0 3',
+                  poiNarration: '#liftTrackNarration'
                 }
               ],
               narration: "#bathroomNarration" //the narration for this scene
@@ -65,7 +67,8 @@
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#lift", //video asset 
                   vidPos: '0 0 3'
-                }]
+                }],
+                narration: "#dormEntranceNarration"
             },
               {//scene2 - bed
                 sceneref : "#bedroom-bed",
@@ -85,15 +88,18 @@
                     pos : '-2.1 -1.5 -5', // ipad
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#lift", //video asset 
-                  vidPos: '0 0 1'
+                  vidPos: '0 0 1',
+                  poiNarration: '#ipadNarration'
                   },
                   {
                     pos : '-0.7 1 -4', //lift 
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset 
-                    vidPos: '0 0 2.5'
+                    vidPos: '0 0 2.5',
+                  poiNarration: '#liftNarration'
                   }
-                ]
+                ],
+                narration: '#dormBedNarration'
               },
               {//scene3
                 sceneref : "#hallway",
@@ -114,7 +120,8 @@
                     scale: '2 2 2',
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#lift", //video asset 
-                  vidPos: '0 0 3.5'
+                  vidPos: '0 0 3.5',
+                  poiNarration: '#unlockDoorNarration'
                   },
                   {
                     pos : '999999 999999 -9999999',
@@ -122,7 +129,8 @@
                     videoAsset: "#lift", //video asset 
                     vidPos: '0 0 3'
                   }
-                ]
+                ],
+                narration: '#dormEntranceNarration'
               },
               {//scene4 - ground floor
                 sceneref : "#ground-floor",
@@ -179,7 +187,8 @@
                     videoAsset: "#lift", //video asset 
                     vidPos: '0 0 3'
                   }
-                ]
+                ],
+                narration: '#elevatorBottomNarration'
               },
             {//scene6 - bottom floor common area
                 sceneref : "#common-area",
@@ -200,15 +209,18 @@
                     scale: '2 2 2',
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset
-                    vidPos: '0 0 3'
+                    vidPos: '0 0 3',
+                    poiNarration: '#mailBoxNarration'
                   },
                   {
                     pos : '-3 0 -4', //front desk
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset
-                    vidPos: '0 0 3'
+                    vidPos: '0 0 3',
+                    poiNarration: '#frontDeskNarration'
                   }
-                ]
+                ],
+                narration: '#bottomReceptionNarration'
             },
             {//scene7 - entrance
                 sceneref : "#entrance",
@@ -236,7 +248,8 @@
                     videoAsset: "#lift", //video asset
                     vidPos: '0 0 3'
                   }
-                ]
+                ],
+                narration: '#bottomEntranceNarration'
             }
           ];
     </script>
@@ -249,9 +262,19 @@
     </a-entity>
 
     <!-- Narration --> 
-    <a-entity id="sceneNarration" sound="src:#bathroomNarration; autoplay: true;">
+    <a-entity id="sceneNarration" sound="src:#outsideNarration; autoplay: true;">
+    </a-entity>
+<!--
+    <a-entity class="narrationPOI" id="narr1"
+    sound="src:#bottomElevatorNarration; autoplay: false;">
     </a-entity>
 
+    <a-entity class="narrationPOI" id="narr2"
+    sound="src:#bottomElevatorNarration; autoplay: false;">
+    </a-entity>
+  -->
+
+ </a-entity>
     <!-- Point of interest 1 -->
     <a-circle id="poi1" src="images/Information_icon.svg.png" position="999999 999999 -9999999"
       img-on-click="target: #image1"
@@ -259,10 +282,11 @@
       look-at="[camera]">
 
        <!-- 2 1 -4-->
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" 
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #frontDeskNarration" 
          geometry="primitive:plane; width:3; height:2" id="image1" 
          visible="false" position="0 0 3"
          height="3" width="6" material="shader:flat;src: #lift;" 
+         sound="src:#bottomElevatorNarration; autoplay: false;"
          look-at="[camera]">
       </a-entity>
 
@@ -274,11 +298,12 @@
       geometry="primitive: circle; radius: .2"
       look-at="[camera]">
 
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift" 
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #ipadNarration" 
          geometry="primitive:plane; width:3; height:2" id="image2" 
          visible="false" position="0 0 3" 
          height="3" width="6" material="shader:flat; src: #lift;" 
-         look-at="[camera]" >
+         sound="src:#bottomElevatorNarration; autoplay: false;"
+         look-at="[camera]">
       </a-entity>
 
     </a-circle>
@@ -317,8 +342,26 @@
 
       <video id="lift" autoplay="false" muted="true" src="videos/lift.mp4" crossorigin="anonymous">
       <video id="tablet" autoplay="false" muted="true" src="videos/lift.mp4" crossorigin="anonymous">
-        
-      <audio id="bathroomNarration" autoplay:"false" src="narrations/stock.mp3">
+      <!-- POI narration assets -->  
+      <audio id="frontDeskNarration" src="narrations/pois/front-desk.mp3"  autoplay="false" ></audio>
+      <audio id="ipadNarration" src="narrations/pois/ipad.mp3" preload="true" autoplay="false" ></audio>
+      <audio id="liftTrackNarration" src="narrations/pois/lift-track.mp3" preload="true"autoplay="false" ></audio>
+      <audio id="liftNarration" src="narrations/pois/lift.mp3" preload="auto" autoplay="false" ></audio>
+      <audio id="mailBoxNarration" src="narrations/pois/mail-boxes.mp3" preload="auto" autoplay="false" ></audio>
+      <audio id="sinkNarration" src="narrations/pois/sink.mp3" preload="auto" autoplay="false" ></audio>
+      <audio id="unlockDoorNarration" src="narrations/pois/unlock-door.mp3" preload="auto" autoplay="false" ></audio>
+
+      <!-- Scene narration assets -->  
+      <audio id="bathroomNarration" autoplay="false" src="narrations/scenes/bathroom.mp3"></audio>
+      <audio id="bottomElevatorNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-elevators.mp3"></audio>
+      <audio id="bottomEntranceNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-entrance.mp3"></audio>
+      <audio id="bottomReceptionNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-reception.mp3"></audio>
+      <audio id="dormBedNarration" autoplay="false" src="narrations/scenes/dorm-room-near-bed.mp3"></audio>
+      <audio id="dormEntranceNarration" autoplay="false" src="narrations/scenes/dorm-room-near-entrance.mp3"></audio>
+      <audio id="elevatorBottomNarration" autoplay="false" src="narrations/scenes/elevator-bottom-floor.mp3"></audio>
+      <audio id="outsideNarration" autoplay="true" src="narrations/scenes/outside-entrance.mp3"></audio>
+      <audio id="secondFloorNarration" autoplay="false" src="narrations/scenes/second-floor-near-elevator.mp3"></audio>
+    
     </a-assets>
   </a-scene>
 </body>
