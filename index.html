@@ -7,7 +7,7 @@
   <script src="components/play-point-of-interest.js"></script>
   <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script> 
 
-  </head>
+</head>
 <body>
     <script>
         var scenelist = [
@@ -130,7 +130,7 @@
                     vidPos: '0 0 3'
                   }
                 ],
-                narration: '#dormEntranceNarration'
+                narration: '#secondFloorNarration'
               },
               {//scene4 - ground floor
                 sceneref : "#ground-floor",
@@ -340,28 +340,29 @@
       <img id="bathroom" src="images/bathroom.jpg">
       <img id="common-area" src="images/common-area2.jpg">
 
+      <!-- POI videos -->
       <video id="lift" autoplay="false" muted="true" src="videos/lift.mp4" crossorigin="anonymous">
       <video id="tablet" autoplay="false" muted="true" src="videos/lift.mp4" crossorigin="anonymous">
-      <!-- POI narration assets -->  
-      <audio id="frontDeskNarration" src="narrations/pois/front-desk.mp3"  autoplay="false" ></audio>
-      <audio id="ipadNarration" src="narrations/pois/ipad.mp3" preload="true" autoplay="false" ></audio>
-      <audio id="liftTrackNarration" src="narrations/pois/lift-track.mp3" preload="true"autoplay="false" ></audio>
-      <audio id="liftNarration" src="narrations/pois/lift.mp3" preload="auto" autoplay="false" ></audio>
-      <audio id="mailBoxNarration" src="narrations/pois/mail-boxes.mp3" preload="auto" autoplay="false" ></audio>
-      <audio id="sinkNarration" src="narrations/pois/sink.mp3" preload="auto" autoplay="false" ></audio>
-      <audio id="unlockDoorNarration" src="narrations/pois/unlock-door.mp3" preload="auto" autoplay="false" ></audio>
 
-      <!-- Scene narration assets -->  
-      <audio id="bathroomNarration" autoplay="false" src="narrations/scenes/bathroom.mp3"></audio>
-      <audio id="bottomElevatorNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-elevators.mp3"></audio>
-      <audio id="bottomEntranceNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-entrance.mp3"></audio>
-      <audio id="bottomReceptionNarration" autoplay="false" src="narrations/scenes/bottom-floor-near-reception.mp3"></audio>
-      <audio id="dormBedNarration" autoplay="false" src="narrations/scenes/dorm-room-near-bed.mp3"></audio>
-      <audio id="dormEntranceNarration" autoplay="false" src="narrations/scenes/dorm-room-near-entrance.mp3"></audio>
-      <audio id="elevatorBottomNarration" autoplay="false" src="narrations/scenes/elevator-bottom-floor.mp3"></audio>
-      <audio id="outsideNarration" autoplay="true" src="narrations/scenes/outside-entrance.mp3"></audio>
-      <audio id="secondFloorNarration" autoplay="false" src="narrations/scenes/second-floor-near-elevator.mp3"></audio>
-    
+      <!-- POI narration assets -->  
+      <a-asset-item id="frontDeskNarration" src="narrations/pois/front-desk.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="ipadNarration" src="narrations/pois/ipad.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="liftTrackNarration" src="narrations/pois/lift-track.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="liftNarration" src="narrations/pois/lift.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="mailBoxNarration" src="narrations/pois/mail-boxes.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="sinkNarration" src="narrations/pois/sink.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="unlockDoorNarration" src="narrations/pois/unlock-door.mp3" response-type="arraybuffer"></a-asset-item>
+
+      <!-- Scene narration assets -->
+      <a-asset-item id="outsideNarration" src="narrations/scenes/outside-entrance.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="bottomEntranceNarration" src="narrations/scenes/bottom-floor-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="bathroomNarration" src="narrations/scenes/bathroom.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="bottomReceptionNarration" src="narrations/scenes/bottom-floor-near-reception.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="dormBedNarration" src="narrations/scenes/dorm-room-near-bed.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="dormEntranceNarration" src="narrations/scenes/dorm-room-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>      
+      <a-asset-item id="elevatorBottomNarration" src="narrations/scenes/elevator-bottom-floor.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="secondFloorNarration" src="narrations/scenes/second-floor-near-elevator.mp3" response-type="arraybuffer"></a-asset-item>
+
     </a-assets>
   </a-scene>
 </body>
