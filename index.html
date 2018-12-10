@@ -159,7 +159,8 @@
                     videoAsset: "#lift", //video asset 
                     vidPos: '0 0 3'
                   }
-                ]
+                ],
+                narration: "#bottomFloorElevatorNarration"
               },
               {//scene5 - elevator
                 sceneref : "#elevator",
@@ -256,9 +257,9 @@
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-entity class="model" material="color: red" position="-3.3 -1 -12" rotation="225 90 90" change-scene-on-click="sceneNum: 7" gltf-model="#arrow">
+    <a-entity class="model" material="color: red" position="-3.3 -1 -12" rotation="225 90 90" scene="sceneNum: 7" gltf-model="#arrow">
     </a-entity>
-    <a-entity class="model" material="color: red" position="999999 999999 -9999999" rotation="225 90 90"change-scene-on-click="sceneNum: 7" gltf-model="#arrow">
+    <a-entity class="model" material="color: red" position="999999 999999 -9999999" rotation="225 90 90" scene="sceneNum: 7" gltf-model="#arrow">
     </a-entity>
 
     <!-- Narration --> 
@@ -354,14 +355,15 @@
       <a-asset-item id="unlockDoorNarration" src="narrations/pois/unlock-door.mp3" response-type="arraybuffer"></a-asset-item>
 
       <!-- Scene narration assets -->
-      <a-asset-item id="outsideNarration" src="narrations/scenes/outside-entrance.mp3" response-type="arraybuffer"></a-asset-item>
-      <a-asset-item id="bottomEntranceNarration" src="narrations/scenes/bottom-floor-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>
       <a-asset-item id="bathroomNarration" src="narrations/scenes/bathroom.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="bottomEntranceNarration" src="narrations/scenes/bottom-floor-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>
       <a-asset-item id="bottomReceptionNarration" src="narrations/scenes/bottom-floor-near-reception.mp3" response-type="arraybuffer"></a-asset-item>
       <a-asset-item id="dormBedNarration" src="narrations/scenes/dorm-room-near-bed.mp3" response-type="arraybuffer"></a-asset-item>
-      <a-asset-item id="dormEntranceNarration" src="narrations/scenes/dorm-room-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>      
+      <a-asset-item id="outsideNarration" src="narrations/scenes/outside-entrance.mp3" response-type="arraybuffer"></a-asset-item>
       <a-asset-item id="elevatorBottomNarration" src="narrations/scenes/elevator-bottom-floor.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="dormEntranceNarration" src="narrations/scenes/dorm-room-near-entrance.mp3" response-type="arraybuffer"></a-asset-item>      
       <a-asset-item id="secondFloorNarration" src="narrations/scenes/second-floor-near-elevator.mp3" response-type="arraybuffer"></a-asset-item>
+      <a-asset-item id="bottomFloorElevatorNarration" src="narrations\scenes\bottom-floor-near-elevators.mp3" response-type="arraybuffer"></a-asset-item>
 
     </a-assets>
   </a-scene>
