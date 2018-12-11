@@ -3,7 +3,8 @@ AFRAME.registerComponent('scene', {
         sceneNum: {default: 0}
     },
 
-    init: function () {      
+    init: function () {
+              
         this.el.addEventListener('click', clickFunction);
 
         function clickFunction() {            
