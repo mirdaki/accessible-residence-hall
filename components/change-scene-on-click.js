@@ -82,5 +82,10 @@ AFRAME.registerComponent('scene', {
             timerControl = setInterval(loadCaptions, scene.captions[captionIndex].time);
             ++captionIndex;
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            firstSceneCaptions();
+            console.log('testing this shiitttt');
+        });
     }
 });

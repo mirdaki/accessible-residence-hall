@@ -23,7 +23,7 @@ BOTTOM FLOOR ENTRANCE
 This is the common area,
 
 00.02.000 --> 00.04.000
-where students can access different amentities and hangout.
+where students can access different amenities and hangout.
 
 
 BOTTOM FLOOR RECEPTION
