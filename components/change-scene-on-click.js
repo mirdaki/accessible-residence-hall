@@ -18,6 +18,7 @@ AFRAME.registerComponent('scene', {
             loadPois(scene.tooltips, data);
             loadPorts(scene.transports);
             startNarration(scene.narration);
+            loadCaptions(data);
         }
 
         function startNarration(narration){
@@ -59,6 +60,12 @@ AFRAME.registerComponent('scene', {
                 boxes[i].setAttribute('scene', 
                     "sceneNum: " + transports[i].sceneIndex);
             }
+        }
+
+        function loadCaptions(data){
+            var text = document.querySelector("#captions");
+            var scene = scenelist[data.sceneNum];
+            text.setAttribute('value', scene.captions);
         }
     }
 });
