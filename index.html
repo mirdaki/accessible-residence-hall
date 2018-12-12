@@ -10,6 +10,10 @@
 </head>
 <body>
     <script>
+        var captionIndex = 0;
+        var timerControl;
+        var globalData;
+        
         var scenelist = [
             {//scene0 - bathroom
               sceneref : "#bathroom",
@@ -251,7 +255,7 @@
                   }
                 ],
                 narration: '#bottomEntranceNarration',
-                captions: 'Testing - scene 7'
+                captions: [{text:"Welcome to Cypress Hall.", time:2000}, {text:"You can look around by turning your mobile devices", time:2000}, {text:"or clicking and dragging on a computers.", time:2000}, {text:"Focus your pointer on the blue circles to hear", time:2000}, {text:"more information about the area.", time:2000}, {text:"Focus your pointer on the arrows", time:2000}, {text:"to move between rooms.", time:2000}]
             }
           ];
     </script>

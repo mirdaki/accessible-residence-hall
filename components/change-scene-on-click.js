@@ -18,7 +18,9 @@ AFRAME.registerComponent('scene', {
             loadPois(scene.tooltips, data);
             loadPorts(scene.transports);
             startNarration(scene.narration);
-            loadCaptions(data);
+
+            globalData = data;
+            loadCaptions();
         }
 
         function startNarration(narration){
@@ -62,10 +64,23 @@ AFRAME.registerComponent('scene', {
             }
         }
 
-        function loadCaptions(data){
+        function loadCaptions(){
             var text = document.querySelector("#captions");
-            var scene = scenelist[data.sceneNum];
-            text.setAttribute('value', scene.captions);
+            var scene = scenelist[globalData.sceneNum];
+
+            // If at end of list
+            if (scene.captions.length == captionIndex)
+            {
+                text.setAttribute('value', "");
+                clearInterval(timerControl);
+                captionIndex = 0;
+                return;
+            }
+
+            text.setAttribute('value', scene.captions[captionIndex].text);
+            clearInterval(timerControl);
+            timerControl = setInterval(loadCaptions, scene.captions[captionIndex].time);
+            ++captionIndex;
         }
     }
 });
