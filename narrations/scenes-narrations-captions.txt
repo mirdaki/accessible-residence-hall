@@ -1,0 +1,103 @@
+Timing for narrations
+
+-----SCENES------
+
+BATHROOM
+
+00.00.000 --> 00.02.000
+The bathroom is spacious, and allows
+
+00.02.000 --> 00.04.000
+for easy movement with a chair or lift
+
+
+BOTTOM-FLOOR-ELEVATORS
+
+00.00.000 --> 00.04.000
+Two elevators make it easy to go between the five floors of the hall.
+
+
+BOTTOM FLOOR ENTRANCE
+
+00.00.000 --> 00.02.00
+This is the common area,
+
+00.02.000 --> 00.04.000
+where students can access different amentities and hangout.
+
+
+BOTTOM FLOOR RECEPTION
+
+00.00.000 --> 00.02.000
+Though parking is limited around the dorm,
+
+00.02.000 --> 00.04.000
+students with disabilities may purchase a decal
+
+00.04.00 --> 00.06.000
+to help them park on campus.
+
+
+DORM ROOM NEAR BED
+
+00.00.000 --> 00.02.000
+The furniture in each room is custom build for the student
+
+00.02.000 --> 00.05.000
+to make it easy for them to move around.
+
+
+DORM ROOM NEAR ENTRANCE
+
+00.00.000 --> 00.04.000
+Each dorm room has a bed, desk, shelf, sink,
+
+00.04.000 --> 00.06.000
+and shares a bathroom with one neighbor.
+
+
+ELEVATOR BOTTOM FLOOR
+
+00.00.000 --> 00.03.000
+Each elevator is equipped with bumpers to select the floor.
+
+
+OUTSIDE ENTRANCE
+
+00.00.000 --> 00.01.000
+Welcome to Cypress Hall.
+
+00.01.000 --> 00.03.000
+You can look around by turning your mobile device
+
+00.03.000 --> 00.05.000
+or by clicking and dragging on a computer
+
+00.06.000 --> 00.08.000
+Focus your pointer on the blue circles 
+
+00.08.000 --> 00.10.000
+to hear more information about the area
+
+00.10.000 --> 00.13.000
+Focus your pointers on the arrows to move between rooms.
+
+
+SECOND FLOOR NEAR ELEVATOR
+
+00.00.000 --> 00.04.000
+The hallway to the rooms is extra wide for easy movement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
