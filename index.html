@@ -13,6 +13,8 @@
         var captionIndex = 0;
         var timerControl;
         var globalData;
+        //global var to keep track scenes
+        var scene;
         
         var scenelist = [
             {//scene0 - bathroom
@@ -224,7 +226,8 @@
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset
                     vidPos: '0 0 3',
-                    poiNarration: '#mailBoxNarration'
+                    poiNarration: '#mailBoxNarration',
+                    poiCaptions: [{text:"Each resident has a mailbox on the bottom floor and can drop off mail to send it", time:3000}]
                   },
                   {
                     pos : '-3 0 -4', //front desk
@@ -301,7 +304,7 @@
       look-at="[camera]">
 
        <!-- 2 1 -4-->
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #frontDeskNarration" 
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #frontDeskNarration scene:-1"
          geometry="primitive:plane; width:3; height:2" id="image1" 
          visible="false" position="0 0 3"
          height="3" width="6" material="shader:flat;src: #lift;" 

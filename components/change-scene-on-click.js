@@ -83,9 +83,5 @@ AFRAME.registerComponent('scene', {
             ++captionIndex;
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            firstSceneCaptions();
-            console.log('testing this shiitttt');
-        });
     }
 });
