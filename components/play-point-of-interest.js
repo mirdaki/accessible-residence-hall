@@ -15,7 +15,6 @@ AFRAME.registerComponent('play-point-of-interest',{
         el.addEventListener('click', function(){
             var video = document.querySelector(data.poi);
             //var poiNarr = document.querySelector(data.narr);
-            console.log("THIS IS POI "+poiNarr);
             console.log('playing video');
             narration.components.sound.pauseSound();
             //playing video
