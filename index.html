@@ -218,10 +218,10 @@
               },
             {//scene6 - bottom floor common area
                 sceneref : "#common-area",
-                sceneyrot : 0.0, //< 360,
+                sceneyrot : 180.0, //< 360,
                 transports: [
                     { //back to entrance
-                        pos : '-18 -2 -3',
+                        pos : '18 -2 3',
                         sceneIndex : 7 //index of this array to switch to hallway
                     },
                     { //NO PORT2
@@ -240,7 +240,7 @@
                     poiCaptions: [{text:"Each resident has a mailbox on the bottom floor and can drop off mail to send it", time:4000}]
                   },
                   {
-                    pos : '-3 0 -4', //front desk
+                    pos : '3 0 4', //front desk
                     scale: '1 1 1',
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#hallExteriorImage", //video asset
