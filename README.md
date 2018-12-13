@@ -40,6 +40,10 @@ magick mogrify -path OUTPUT -filter Triangle -define filter:support=2 -thumbnail
 
 Could not find a good CLI tool for compressing video, but using [HandBrake](https://handbrake.fr/) works well. Videos were compressed using the "Very Fast 480p30" preset with no audio.
 
+### Audio Settings
+
+Also could not find a CLI tool for compressing audio, but using [Audacity](https://www.audacityteam.org/) works well. Audio was compressed using sample rate of 8000 Hz, with Bit Rate between 145-185 kbps, and mono channels.
+
 ## License
 
 This project's code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
