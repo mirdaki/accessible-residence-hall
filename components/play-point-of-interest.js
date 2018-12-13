@@ -14,7 +14,10 @@ AFRAME.registerComponent('play-point-of-interest',{
         var narration = document.querySelector('#sceneNarration');
 
         el.addEventListener('click', function(){
-            var video = document.querySelector(data.poi);
+            //var videoSource = el.getAttribute('material', src);
+            var material = el.getAttribute ('material');
+            var video = material.src;
+            //var video = document.querySelector(videoSource);
             //var poiNarr = document.querySelector(data.narr);
             console.log('playing video');
             narration.components.sound.pauseSound();
@@ -26,7 +29,6 @@ AFRAME.registerComponent('play-point-of-interest',{
             //playing poi narration sound
             el.addEventListener('mouseleave', function(){
                 var video = document.querySelector(data.poi);
-                var poiNarr = document.querySelector(data.narr);
                 el.components.sound.pauseSound();
                 video.pause();
 
