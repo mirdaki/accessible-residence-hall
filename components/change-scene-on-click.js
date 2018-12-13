@@ -17,11 +17,15 @@ AFRAME.registerComponent('scene', {
             //Set sky yaw.
             loadPois(scene.tooltips, data);
             loadPorts(scene.transports);
-            startNarration(scene.narration);
-
+            
             globalScene = data.sceneNum;
             globalData = data;
-            loadCaptions();
+            if (scenePlayed[data.sceneNum] != true)
+            {
+                scenePlayed[data.sceneNum] = true;
+                startNarration(scene.narration);
+                loadCaptions();
+            }
         }
 
         function startNarration(narration){
