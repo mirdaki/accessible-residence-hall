@@ -35,6 +35,11 @@ The background images are resized to load faster. It uses a command line tool ca
 ```bash
 magick mogrify -path OUTPUT -filter Triangle -define filter:support=2 -thumbnail 4096x1024 -unsharp 1x2 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB -strip INPUT
 ```
+
+### Video Settings
+
+Could not find a good CLI tool for compressing video, but using [HandBrake](https://handbrake.fr/) works well. Videos were compressed using the "Very Fast 480p30" preset with no audio.
+
 ## License
 
 This project's code is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
