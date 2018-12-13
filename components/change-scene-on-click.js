@@ -10,7 +10,7 @@ AFRAME.registerComponent('scene', {
         function clickFunction() {            
             var data = this.components.scene.data;
             var sky = document.querySelector('a-sky');
-    
+
             var scene = scenelist[data.sceneNum];
             sky.setAttribute('src', scene.sceneref);
             sky.setAttribute('phi-start', scene.sceneyrot);
@@ -19,6 +19,7 @@ AFRAME.registerComponent('scene', {
             loadPorts(scene.transports);
             startNarration(scene.narration);
 
+            globalScene = data.sceneNum;
             globalData = data;
             loadCaptions();
         }

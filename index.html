@@ -11,10 +11,11 @@
 <body>
     <script>
         var captionIndex = 0;
+        var poiCaptionIndex = 0;
         var timerControl;
         var globalData;
         //global var to keep track scenes
-        var scene;
+        var globalScene;
         
         var scenelist = [
             {//scene0 - bathroom
@@ -227,7 +228,7 @@
                     videoAsset: "#lift", //video asset
                     vidPos: '0 0 3',
                     poiNarration: '#mailBoxNarration',
-                    poiCaptions: [{text:"Each resident has a mailbox on the bottom floor and can drop off mail to send it", time:3000}]
+                    poiCaptions: [{text:"Each resident has a mailbox on the bottom floor and can drop off mail to send it", time:4000}]
                   },
                   {
                     pos : '-3 0 -4', //front desk
@@ -304,7 +305,7 @@
       look-at="[camera]">
 
        <!-- 2 1 -4-->
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #frontDeskNarration scene:-1"
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #frontDeskNarration; number:0"
          geometry="primitive:plane; width:3; height:2" id="image1" 
          visible="false" position="0 0 3"
          height="3" width="6" material="shader:flat;src: #lift;" 
@@ -320,7 +321,7 @@
       geometry="primitive: circle; radius: .2"
       look-at="[camera]">
 
-      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #ipadNarration" 
+      <a-entity class="vidpanel" play-point-of-interest="poi: #lift; narr: #ipadNarration; number:1"
          geometry="primitive:plane; width:3; height:2" id="image2" 
          visible="false" position="0 0 3" 
          height="3" width="6" material="shader:flat; src: #lift;" 

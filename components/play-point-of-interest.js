@@ -2,7 +2,8 @@ AFRAME.registerComponent('play-point-of-interest',{
 
     schema:{
         poi:{default: ''},
-        narr:{default: ''}
+        narr:{default: ''},
+        number:{default: 0}
     },
 
     update: function(){
@@ -10,7 +11,6 @@ AFRAME.registerComponent('play-point-of-interest',{
         var el = this.el;
         //get the narration and other attributes from here
 
-       // var globalData = this.components.scene.data;
         var narration = document.querySelector('#sceneNarration');
 
         el.addEventListener('click', function(){
@@ -22,7 +22,7 @@ AFRAME.registerComponent('play-point-of-interest',{
             el.components.sound.playSound();
             video.play();
             //load captions
-            // loadCaptions();
+            loadCaptions();
             //playing poi narration sound
             el.addEventListener('mouseleave', function(){
                 var video = document.querySelector(data.poi);
@@ -36,24 +36,24 @@ AFRAME.registerComponent('play-point-of-interest',{
             });
         });
 
-        // function loadCaptions(){
-        //     var text = document.querySelector("#captions");
-        //     var scene = scenelist[globalData.sceneNum];
-        //
-        //     // If at end of list
-        //     if (scene.tooltips.poiCaptions.length == captionIndex)
-        //     {
-        //         text.setAttribute('value', "");
-        //         clearInterval(timerControl);
-        //         captionIndex = 0;
-        //         return;
-        //     }
-        //
-        //     text.setAttribute('value', scene.tooltips.poiCaptions[captionIndex].text);
-        //     clearInterval(timerControl);
-        //     timerControl = setInterval(loadCaptions, scene.tooltips.poiCaptions[captionIndex].time);
-        //     ++captionIndex;
-        // }
+        function loadCaptions(){
+            var text = document.querySelector("#captions");
+            var scene = scenelist[globalData.sceneNum];
+
+            // If at end of list
+            if (scene.tooltips[data.number].poiCaptions.length == poiCaptionIndex)
+            {
+                text.setAttribute('value', "");
+                clearInterval(timerControl);
+                poiCaptionIndex = 0;
+                return;
+            }
+
+            text.setAttribute('value', scene.tooltips[data.number].poiCaptions[poiCaptionIndex].text);
+            clearInterval(timerControl);
+            timerControl = setInterval(loadCaptions, scene.tooltips[data.number].poiCaptions[poiCaptionIndex].time);
+            ++poiCaptionIndex;
+        }
     }
 
 });
