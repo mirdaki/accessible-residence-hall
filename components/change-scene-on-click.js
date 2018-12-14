@@ -17,6 +17,14 @@ AFRAME.registerComponent('scene', {
             //Set sky yaw.
             loadPois(scene.tooltips, data);
             loadPorts(scene.transports);
+
+            // Clear captions
+            document.querySelector("#captions").setAttribute('value', "");
+            clearInterval(sceneTimerControl);
+            captionIndex = 0;
+
+            // Stop old sound
+            document.querySelector('#sceneNarration').components.sound.stopSound();
             
             globalScene = data.sceneNum;
             globalData = data;
@@ -77,14 +85,14 @@ AFRAME.registerComponent('scene', {
             if (scene.captions.length == captionIndex)
             {
                 text.setAttribute('value', "");
-                clearInterval(timerControl);
+                clearInterval(sceneTimerControl);
                 captionIndex = 0;
                 return;
             }
 
             text.setAttribute('value', scene.captions[captionIndex].text);
-            clearInterval(timerControl);
-            timerControl = setInterval(loadCaptions, scene.captions[captionIndex].time);
+            clearInterval(sceneTimerControl);
+            sceneTimerControl = setInterval(loadCaptions, scene.captions[captionIndex].time);
             ++captionIndex;
         }
 

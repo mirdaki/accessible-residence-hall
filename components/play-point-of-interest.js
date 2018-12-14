@@ -19,7 +19,14 @@ AFRAME.registerComponent('play-point-of-interest',{
             var video = material.src;
 
             console.log('playing video');
-            narration.components.sound.pauseSound();
+            // narration.components.sound.pauseSound();
+
+            // End scene narrations and captions
+            narration.components.sound.stopSound();
+            document.querySelector("#captions").setAttribute('value', "");
+            clearInterval(sceneTimerControl);
+            captionIndex = 0;
+
             //playing video
             el.components.sound.playSound();
 
@@ -36,13 +43,20 @@ AFRAME.registerComponent('play-point-of-interest',{
             //playing poi narration sound
             el.addEventListener('mouseleave', function(){
                 var video = document.querySelector(data.poi);
-                el.components.sound.pauseSound();
+                // el.components.sound.pauseSound();
+                el.components.sound.stopSound();
+
+                // Turn off captions
+                clearInterval(poiTimerControl);
+                document.querySelector("#captions").setAttribute('value', "");
+                poiCaptionIndex = 0;
+
                 if(!(video.id).includes('Image')){
                     video.pause();
                 }
                 //resume scene narration
                 console.log('stopping video');
-                narration.components.sound.playSound();
+                // narration.components.sound.playSound();
             });
         });
 
@@ -54,14 +68,14 @@ AFRAME.registerComponent('play-point-of-interest',{
             if (scene.tooltips[data.number].poiCaptions.length == poiCaptionIndex)
             {
                 text.setAttribute('value', "");
-                clearInterval(timerControl);
+                clearInterval(poiTimerControl);
                 poiCaptionIndex = 0;
                 return;
             }
 
             text.setAttribute('value', scene.tooltips[data.number].poiCaptions[poiCaptionIndex].text);
-            clearInterval(timerControl);
-            timerControl = setInterval(loadCaptions, scene.tooltips[data.number].poiCaptions[poiCaptionIndex].time);
+            clearInterval(poiTimerControl);
+            poiTimerControl = setInterval(loadCaptions, scene.tooltips[data.number].poiCaptions[poiCaptionIndex].time);
             ++poiCaptionIndex;
         }
     }
