@@ -22,12 +22,16 @@ AFRAME.registerComponent('play-point-of-interest',{
             narration.components.sound.pauseSound();
             //playing video
             el.components.sound.playSound();
-            video.play();
-            //load captions
-            loadCaptions();
-            
-            if(!(video.id).includes('Image')){
+
+            //if image don't play video
+            if((video.id).includes('Image')){
+                //video.play();
+                loadCaptions();
+            }
+            else{
                 video.play();
+                //load captions
+                loadCaptions();
             }
             //playing poi narration sound
             el.addEventListener('mouseleave', function(){
