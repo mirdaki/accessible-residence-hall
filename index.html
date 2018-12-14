@@ -287,19 +287,56 @@
                 narration: '#bottomEntranceNarration',
                 captions: [{text:"This is the common area,", time:1800},
                            {text:"where students can access different amenities and hangout.", time:2000}]
+            },
+            {//scene8:  initial - outside entrance
+                sceneref : "#outside-entrance",
+                sceneyrot : 90.0, //< 360,
+                transports: [
+                    {//inside entrance
+                        pos : "-3.3 -1 -12",
+                        sceneIndex : 7 //index of this array to switch to
+                    },
+                    {//N/a
+                        pos : "999999999 99999999 9999999",
+                        sceneIndex : 6 //index of this array to switch to
+                    }
+                ],
+                tooltips: [
+                  {//no tooltips for this scene
+                    pos : '99999 999999 999999', //mail boxes
+                    scale: '1.5 1.5 1.5',
+                    persistTime : 3.0, //preferably in seconds
+                    videoAsset: "#mailBoxImage", //video asset
+                    vidPos: '0 0 3',
+                    poiNarration: '#mailBoxNarration'
+                  },
+                  {
+                    pos : '999999 999999 -9999999',
+                    persistTime : 3.0, //preferably in seconds
+                    videoAsset: "#lift", //video asset
+                    vidPos: '0 0 3'
+                  }
+                ],
+                narration: '#outsideNarration',
+                captions: [{text:"Welcome to Cypress Hall,", time:1000},
+                           {text:"You can look around by turning your mobile device,", time:2000},
+                           {text:"or by clicking and dragging on a computer,", time:2000},
+                           {text:"Focus your pointer on the blue circles ,", time:2000},
+                           {text:"to hear more information about the area,", time:2000},
+                           {text:"Focus your pointers on the arrows to move between rooms.", time:3000}]
             }
           ];
     </script>
   <a-scene>
 
     <!-- Warp boxes -->
-    <a-entity class="model" material="color: red" position="-3.3 -1 -12" rotation="225 90 90" scene="sceneNum: 7" gltf-model="#arrow">
+    <a-entity class="model" material="color: red" position="-3.3 -1 -12" rotation="225 90 90" scene="sceneNum: 8" gltf-model="#arrow">
     </a-entity>
     <a-entity class="model" material="color: red" position="999999 999999 -9999999" rotation="225 90 90" scene="sceneNum: 7" gltf-model="#arrow">
     </a-entity>
 
     <!-- Narration --> 
-    <a-entity id="sceneNarration" sound="src:#outsideNarration; autoplay: true;">
+    <a-entity id="sceneNarration" sound="src:#outsideNarration; autoplay: false;">
     </a-entity>
 <!--
     <a-entity class="narrationPOI" id="narr1"
@@ -352,7 +389,7 @@
         geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
         material="color: black; shader: flat">
         <!-- Captions-->
-        <a-text id="captions" value="testing - scene 1" color="yellow" width="3" align="center" position="0.0 -0.40 -1.0" captions></a-text>
+        <a-text id="captions" value="" color="yellow" width="3" align="center" position="0.0 -0.40 -1.0" captions></a-text>
         <!-- Cursor -->
         <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" dur="1000"
           fill="backwards" from="1 1 1" to="0.1 0.1 0.1">
@@ -362,7 +399,7 @@
     </a-entity>
     
     <!-- First scene -->
-    <a-sky id="skier" src="#outside-entrance" phi-start=90></a-sky>
+    <a-sky id="skier" src="#menu" phi-start=90></a-sky>
     <!-- List of images and video -->
 
     <a-assets timeout="10000">
@@ -378,7 +415,7 @@
       <img id="elevator" src="images/elevator-in.jpg">
       <img id="bathroom" src="images/bathroom.jpg">
       <img id="common-area" src="images/common-area2.jpg">
-      
+      <img id="menu" src="images/menu.jpg">
 
       <!-- Background music -->
       <audio id="song" src="music/DRC-loop.mp3" type="audio/mp3" preload autoplay loop></audio>
