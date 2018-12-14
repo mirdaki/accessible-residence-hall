@@ -162,11 +162,12 @@
                 ],
                 tooltips: [
                   {//tip1
-                    pos : '999999 999999 -9999999',
-                  text : "#image1",
-                  persistTime : 3.0, //preferably in seconds
-                  videoAsset: "#lift", //video asset 
-                  vidPos: '0 0 3'
+                    pos : '999999 999999 -9999999', //mail boxes
+                    scale: '1.5 1.5 1.5',
+                    persistTime : 3.0, //preferably in seconds
+                    videoAsset: "#mailBoxImage", //video asset
+                    vidPos: '0 0 3',
+                    poiNarration: '#mailBoxNarration'
                   },
                   {
                     pos : '999999 999999 -9999999',
@@ -223,7 +224,7 @@
                 ],
                 tooltips: [
                   {//tip1
-                    pos : '-8 0 3', //mail boxes
+                    pos : '999999 999999 -9999999', //mail boxes
                     scale: '1.5 1.5 1.5',
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset
@@ -234,7 +235,7 @@
                     pos : '-3 0 -4', //front desk
                     scale: '1 1 1',
                     persistTime : 3.0, //preferably in seconds
-                    videoAsset: "#lift", //video asset
+                    videoAsset: "#hallExteriorImage", //video asset
                     vidPos: '0 0 3',
                     poiNarration: '#frontDeskNarration'
                   }
@@ -259,10 +260,12 @@
                 ],
                 tooltips: [
                   {//tip1
-                    pos : '999999 999999 -9999999',
-                  persistTime : 3.0, //preferably in seconds
-                  videoAsset: "#lift", //video asset
-                  vidPos: '0 0 3'
+                    pos : '8 0 6', //mail boxes
+                    scale: '1.5 1.5 1.5',
+                    persistTime : 3.0, //preferably in seconds
+                    videoAsset: "#mailBoxImage", //video asset
+                    vidPos: '0 0 3',
+                    poiNarration: '#mailBoxNarration'
                   },
                   {
                     pos : '999999 999999 -9999999',
@@ -365,6 +368,7 @@
       <img id="elevator" src="images/elevator-in.jpg">
       <img id="bathroom" src="images/bathroom.jpg">
       <img id="common-area" src="images/common-area2.jpg">
+      
 
       <!-- Background music -->
       <audio id="song" src="music/DRC-loop.mp3" type="audio/mp3" preload autoplay loop></audio>
@@ -375,7 +379,8 @@
       <video id="dormDoorVideo" autoplay="false" muted="true" src="videos/dormEntranceVideo.mp4" crossorigin="anonymous">
       <video id="liftTrackVideo" autoplay="false" muted="true" src="videos/liftTrack.mp4" crossorigin="anonymous">
       <video id="sinkVideo" autoplay="false" muted="true" src="videos/Sink.mp4" crossorigin="anonymous">
-
+      <img id="mailBoxImage" src="images/mailboxes.jpg">
+      <img id="hallExteriorImage" src="images/hallExterior.jpg">
 
       <!-- POI narration assets -->  
       <a-asset-item id="frontDeskNarration" src="narrations/pois/front-desk.mp3" response-type="arraybuffer"></a-asset-item>
