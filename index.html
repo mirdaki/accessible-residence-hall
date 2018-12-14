@@ -59,14 +59,14 @@
             },
             {//scene1 - bedroom general
               sceneref : "#bedroom-general",
-              sceneyrot : 0.0, //< 360,
+              sceneyrot : 210.0, //< 360,
               transports: [
                 { //bed
-                  pos : '-7 -2 0',
+                  pos : '6.06 -2 3.5',
                   sceneIndex : 2 //index of this array to switch to
                 },
                 { //back to hallway
-                  pos : '7 -2 0',
+                  pos : '-6.06 -2 -3.5',
                   sceneIndex : 3 //index of this array to switch to
                 }
               ],
@@ -89,20 +89,20 @@
             },
               {//scene2 - bed
                 sceneref : "#bedroom-bed",
-                sceneyrot : 0.0, //< 360,
+                sceneyrot : 210.0, //< 360,
                 transports: [
                   { //bathroom
-                    pos : '13 -1 -4',
+                    pos : '-13.26 -1 -3.04',
                     sceneIndex : 0 //index of this array to switch to
                   },
                   {// bedroom general
-                        pos : "20 0 0",
+                        pos : "-17.32 0 -10",
                         sceneIndex : 1 //index of this array to switch to
                   }
                 ],
                 tooltips: [
                   {//tip1
-                    pos : '-2.1 -1.5 -5', // ipad
+                    pos : '-0.68 -1.5 5.38', // ipad
                     scale: '1 1 1',
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#tabletVideo", //video asset 
@@ -110,7 +110,7 @@
                   poiNarration: '#ipadNarration'
                   },
                   {
-                    pos : '-0.7 1 -4', //lift 
+                    pos : '-1.39 1 3.81', //lift 
                     scale: '1 1 1',
                     persistTime : 3.0, //preferably in seconds
                     videoAsset: "#lift", //video asset 
@@ -124,20 +124,21 @@
               },
               {//scene3
                 sceneref : "#hallway",
-                sceneyrot : 0.0, //< 360,
+                sceneyrot : 220.0, //< 360,
+                //x' = x cos(th) + y sin(th)   y' = y cos(th) -x sin(th)
                 transports: [
                   {//bedroom general
-                    pos : '-9 -1 2',
+                    pos : '8.18 -1 4.25',
                     sceneIndex : 1 //index of this array to switch to
                   },
                   {//back downstairs
-                    pos : "8 -1 4",
+                    pos : "-3.56 -1 -8.21",
                     sceneIndex : 4 //index of this array to switch to
                   },
                 ],
                 tooltips: [
                   {//tip1
-                    pos : '-10 -1 6',
+                    pos : '11.52 -1 1.83',
                     scale: '2 2 2',
                   persistTime : 3.0, //preferably in seconds
                   videoAsset: "#dormDoorVideo", //video asset 
