@@ -125,7 +125,8 @@
               {//scene3
                 sceneref : "#hallway",
                 sceneyrot : 220.0, //< 360,
-                //x' = x cos(th) + y sin(th)   y' = y cos(th) -x sin(th)
+                //x' = (x *cos(-220 degrees)) + (y * sin(-220 degrees))
+                //y' = (y *cos(-210 degrees)) - (x * sin(-210 degrees))
                 transports: [
                   {//bedroom general
                     pos : '8.18 -1 4.25',
